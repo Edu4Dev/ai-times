@@ -1,0 +1,25 @@
+// automatic generated file, don't change it manually
+// VARS
+// Colors
+$primary__colorOne: #3cb8ff;
+$cta__color: #3cb8ff;
+$background_white: #ffffff;
+$mix_cta_white_50: mix(white, $cta__color, 50%);
+$mix_cta_black_50: mix(black, $cta__color, 50%);
+$mix_black_30: mix(black, $primary__colorOne, 30%);
+$mix_black_60: mix(black, $primary__colorOne, 60%);
+$mix_black_80: mix(black, $primary__colorOne, 80%);
+$mix_black_02: mix(rgba(0, 0, 0, 0.2), $primary__colorOne, 35%);
+$dark_bg__color: mix($background_white, black, 25%);
+
+// Dark Colors
+$dark_primary__color: #3cb8ff;
+$dark_cta__color: #0c0f1e;
+$dark_background_white__color: #000;
+
+// PADDINGS and MARGINS
+$header_height__size: 60px;
+
+// LAYOUT WIDTH
+$post__size: 520px;
+$page__size: 1100px;

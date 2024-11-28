@@ -1,0 +1,78 @@
+{
+  "name": "miltons-workspace",
+  "version": "1.0.0-journal.1.0.0",
+  "workspaces": [
+    "core"
+  ],
+  "private": false,
+  "description": "Boilerplate Times",
+  "author": "Milton Bolonha<miltonbolonha@gmail.com>",
+  "keywords": [
+    "Boilerplate Times",
+    "nextjs workspace",
+    "workspace engine",
+    "room workspace engine",
+    "nextjs"
+  ],
+  "scripts": {
+    "docs": "npm run docs -w core",
+    "build": "npm run build -w core",
+    "serve": "npm run serve -w core",
+    "clean": "npm run clean -w core",
+    "update": "npm run update -w core",
+    "emails": "echo './core/content/emails/index.mjml' && mjml ./core/content/emails/index.mjml -o ./core/content/emails/index.html",
+    "predev": "npm run sync",
+    "prebuild": "npm run sync",
+    "develop": "npm run dev --workspace=core",
+    "dev": "npm run dev --workspace=core",
+    "sync": "node core/sync.js",
+    "digest": "npm run digest -w core",
+    "atom": "npm run atom -w core",
+    "chatgpt": "npm run chatgpt -w core",
+    "autogpt": "npm run autogpt -w core",
+    "content": "npm run content -w core",
+    "decap": "npm run decap -w core",
+    "schedule": "npm run schedule -w core",
+    "rss": "npm run rss -w core",
+    "sass": "npm run sass -w core",
+    "sitemaps": "npm run sitemaps -w core",
+    "stories": "npm run stories -w core",
+    "static": "npm run static -w core",
+    "workflows": "npm run workflows -w core",
+    "analyze": "npx cross-env ANALYZE=true npm run build",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miltonbolonha/boilerplate-times"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "@nuktpls:registry": "https://npm.pkg.github.com"
+  },
+  "bugs": {
+    "url": "https://github.com/miltonbolonha/boilerplate-times/issues"
+  },
+  "devDependencies": {
+    "@netlify/plugin-sitemap": "^0.8.1",
+    "@next/bundle-analyzer": "^14.2.3",
+    "@stackbit/cms-git": "^1.0.6",
+    "chokidar": "^3.6.0",
+    "fs-extra": "^11.2.0",
+    "jsdoc": "^4.0.3"
+  },
+  "dependencies": {
+    "@stackbit/types": "^2.0.5",
+    "cloudinary": "^2.5.0",
+    "cross-env": "^7.0.3",
+    "cross-fetch": "^4.0.0",
+    "dirty-json": "^0.9.2",
+    "dotenv": "^16.4.5",
+    "openai": "^4.67.0",
+    "puppeteer": "^23.4.0",
+    "react-cookie-consent": "^9.0.0",
+    "youtube-captions-scraper": "^2.0.3",
+    "youtube-transcript": "^1.2.1"
+  }
+}

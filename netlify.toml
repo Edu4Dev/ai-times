@@ -1,0 +1,21 @@
+[build]
+    command = "node core/sync.js && npm run build --workspace=core"
+    functions = "core/src/api"
+    publish = "core/out"
+
+[build.environment]
+  NODE_VERSION = "20.11.0"
+
+[[plugins]]
+  package = "@netlify/plugin-local-install-core"
+
+[[plugins]]
+package = "@netlify/plugin-emails"
+
+[functions]
+  directory = "core/src/api"
+
+[[edge_functions]]
+  path = "/core/src/api/geo" 
+  function = "injectGeoCookie"
+  

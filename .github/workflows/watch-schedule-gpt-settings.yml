@@ -1,0 +1,66 @@
+name: "[🤰 DIGEST IT]: Ai Settings Trigger - Prompt to Post."
+
+on:
+  label:
+    types:
+      - created
+      - edited
+  push:
+    paths:
+      - "content/settings/autoPost.json"
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.1
+        with:
+          token: ${{ secrets.PAT }}
+
+      - name: "Create env file"
+        run: |
+          touch core/.env
+          echo CHATGPT_API_KEY=${{ secrets.CHATGPT_API_KEY }} >> core/.env
+          echo CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }} >> core/.env
+          cat core/.env
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: "[🤰 DIGEST IT]: run(if:autogpt)"
+        run: |
+          # Desativa newPost para evitar re-disparos
+          jq '.newPost = false' content/settings/autoPost.json > temp.json
+          mv temp.json content/settings/autoPost.json
+          npm run autogpt
+
+      - name: "[🤰 DIGEST IT]: run(workflows)"
+        run: npm run workflows
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'schindyguy'
+          git config --global user.email 'bschindelheim@gmail.com'
+          git pull
+          git add .github/workflows/*.yml content
+          git ls-files --others --exclude-standard content/posts/ | xargs -r git add
+          if git diff-index --quiet HEAD --; then
+              echo "No changes to commit"
+              git clean -f
+              exit 0
+          else
+              git commit -m "✔️ [🤰 DIGEST IT]: watch(ai.settings)"
+          fi
+
+      - name: Push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        run: |
+          git push https://$GITHUB_TOKEN@github.com/schindyguy/mt.git HEAD:master

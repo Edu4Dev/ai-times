@@ -1,0 +1,38 @@
+{
+  "aiUrlFrequency": "Every (n) days",
+  "weeklyPostDay": "Thursday",
+  "everyXDays": 3,
+  "autoPostHourTime": 7,
+  "autoPostMinutesTime": 0,
+  "timezone": "UTC-08:00 (Los Angeles, Pacific Time)",
+  "aiUrlSource": [
+    {
+      "href": "https://money.com/"
+    },
+    {
+      "href": "https://money.com/investing/"
+    },
+    {
+      "href": "https://moneywise.com/"
+    },
+    {
+      "href": "https://moneywise.com/investing"
+    },
+    {
+      "href": "https://walletgenius.com/"
+    },
+    {
+      "href": "https://www.nerdwallet.com/h/category/planning-strategy"
+    },
+    {
+      "href": "https://www.healthline.com/"
+    },
+    {
+      "href": "https://www.healthline.com/health-news"
+    },
+    {
+      "href": "https://www.healthline.com/wellness"
+    }
+  ],
+  "newPost": false
+}

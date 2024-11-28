@@ -1,0 +1,19 @@
+// automatic generated file, don't change it manually
+// THEME SETTINGS
+.main-container-wrapper .main-container.main-page{
+    margin-top: 22px;
+    margin-bottom: 30px;
+    max-width: $page__size;
+}
+
+// HEADER
+body header .main-header{
+    height: $header_height__size;
+    max-width: $page__size;
+    grid-template-columns: 0.2fr 1fr 0.2fr !important !important;
+}
+
+// POSTS
+body .single-post .main-post {
+  grid-template-columns: 0.18fr 1fr 0.2fr !important;
+}

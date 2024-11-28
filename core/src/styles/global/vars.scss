@@ -1,0 +1,57 @@
+// Colors
+$primary__colorOne: #b82632;
+$primary__colorTwo: #e6e6dd;
+$cta__color: #ff950a;
+$cta__second_color: #9b00dd;
+$orange: #ff950a;
+
+$dark_primary__color: #ff950a;
+$dark_cta__color: #1e160c;
+$dark_background_white__color: #000000;
+$dark_mix_black_02: mix(rgba(0, 0, 0, 0.2), $dark_primary__color, 25%);
+
+$primary_light: #e6e6dd;
+$grayscale_500__color: #0c0c0c;
+$grayscale_100__color: #f0f2f4;
+$black: $grayscale_500__color;
+
+$background_white: #e6e6dd;
+$mix_cta_white_50: mix(white, $cta__color, 50%);
+
+$mix_brands: mix($primary__colorOne, $background_white, 35%);
+$mix_black_02: mix(rgba(0, 0, 0, 0.2), $primary__colorOne, 35%);
+$mix_black_05: rgb(0 108 170 / 93%);
+$mix_white_15: mix(white, $primary__colorOne, 85%);
+$mix_white_70: mix(white, $primary__colorOne, 70%);
+$mix_black_60: mix(black, $primary__colorOne, 60%);
+$mix_black_90: mix(black, $primary__colorOne, 90%);
+// #005593
+$heading__top-padding: 30px;
+$heading__bottom-padding: 0px;
+
+// Breakpoints n screen vars
+$logo__max-width: 450px;
+$page__size: 1100px;
+$ext_page__size: 1100px;
+$post__size: 720px;
+$tablet__size: 768px;
+$tabletHack__size: 959px;
+$tabletHackMinimal__size: 425px;
+$boxed__tabletHackMaxWidth: 730px;
+$desktopIndexButtons__maxWidth: 520px;
+$mobileIndexButtons__maxWidth: 280px;
+$tabletIndexButtons__maxWidth: 350px;
+$boxedMobile__maxWidth: 375px;
+$media960: 960px;
+
+// typograph
+$alternative__font: "Arial";
+$main__font: "Inter Variable", $alternative__font, sans-serif;
+
+$h1__fontSize: 30pt;
+$h2__fontSize: 24pt;
+$h3__fontSize: 22pt;
+$h4__fontSize: 20pt;
+$h5__fontSize: 18pt;
+$paragraph__fontSize: 16px;
+$news_card__heading: 14px;

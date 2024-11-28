@@ -1,0 +1,28 @@
+.full-width-row {
+  .full-width-content {
+    max-width: $page__size;
+    margin: 0 auto;
+  }
+}
+.close-button {
+  color: white !important;
+}
+.light-content {
+  .modal-content {
+    * {
+      color: white !important;
+    }
+  }
+}
+
+.boxed-column {
+  &.main-wrapper-inner:first-of-type {
+    padding: $heading__top-padding 0 $heading__bottom-padding;
+    margin: 0 auto;
+  }
+  .boxed-column-child {
+    max-width: $ext_page__size;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}

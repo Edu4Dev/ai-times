@@ -1,0 +1,25 @@
+.main-wrapper {
+  p {
+    margin: 10px auto;
+    font-weight: 400;
+    font-size: 14px;
+    width: 100%;
+    text-align-last: center;
+    font-family: $main__font;
+    text-align: center;
+  }
+  .main-wrapper-inner {
+    &.boxed-column-child {
+      border-radius: 5px;
+      border: 2px solid black;
+      .main-container {
+        border-radius: 10px;
+        border: 2px solid black;
+        margin: 10px 20px;
+      }
+    }
+    &.boxed-column {
+      padding-bottom: 40px;
+    }
+  }
+}

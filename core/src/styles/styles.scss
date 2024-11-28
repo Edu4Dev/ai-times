@@ -1,0 +1,59 @@
+/*
+Theme Name: Boilerplate Times
+Repo URI: https://github.com/schindyguy/ht
+Description: NextJS Website.
+Author: Milton Bolonha
+Version: 0.1.0-journal.1
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Basic global settings
+2.0 Pages
+3.0 Components
+4.0 Modules
+5.0 Helpers & Fixes
+--------------------------------------------------------------*/
+
+@import "./global/vars";
+@import "../../../content/styles/user-vars";
+@import "./helpers/responsive";
+
+/*--------------------------------------------------------------
+1.0 Basic settings
+--------------------------------------------------------------*/
+
+@import "./global/generic";
+@import "./global/base";
+@import "./components/row";
+@import "./components/main-wrapper";
+
+/*--------------------------------------------------------------
+3.0 Components
+--------------------------------------------------------------*/
+
+@import "./components/header";
+@import "./components/footer";
+
+/*--------------------------------------------------------------
+4.0 Modules
+--------------------------------------------------------------*/
+
+@import "./modules/menus";
+@import "./modules/pages";
+@import "./modules/single-post";
+
+/*--------------------------------------------------------------
+2.0 Pages
+--------------------------------------------------------------*/
+
+@import "./pages/index";
+
+/*--------------------------------------------------------------
+5.0 Helpers & Fixes
+--------------------------------------------------------------*/
+
+@import "./helpers/helpers";
+@import "../../../content/styles/user-helpers.scss";
+@import "../../../content/styles/CUSTOMIZE-ME.scss";

@@ -1,0 +1,58 @@
+name: "[🤰 DIGEST IT]: Prompt to Post System - The baby is yours!"
+
+on:
+  label:
+    types:
+      - created
+      - edited
+  push:
+    paths:
+      - "content/ai_drafts/**" # Monitorar mudanças na pasta de drafts
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.1
+        with:
+          token: ${{ secrets.PAT }}
+
+      - name: Setup Abort Update
+        run: |
+          SETABORTUPDATE=$(jq -r '.abortUpdate' content/settings/helper.json)
+          if [ "$SETABORTUPDATE" != "false" ]; then
+            jq '.abortUpdate = true' content/settings/helper.json > temp-helper.json
+            mv temp-helper.json content/settings/helper.json
+          fi
+
+      - name: "Create env file"
+        run: |
+          touch core/.env
+          echo CHATGPT_API_KEY=${{ secrets.CHATGPT_API_KEY }} >> core/.env
+          echo CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }} >> core/.env
+          cat core/.env
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: "[🤰 DIGEST IT]: run() - The baby is yours!"
+        run: npm run chatgpt
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        run: |
+          git config --global user.name 'schindyguy'
+          git config --global user.email 'bschindelheim@gmail.com'
+          git fetch && git pull
+          git add .
+          git status
+          git commit -m "✔️ [Auto Commit]: Convert drafts to posts and build changes"
+          git push https://$GITHUB_TOKEN@github.com/schindyguy/mt.git HEAD:master
