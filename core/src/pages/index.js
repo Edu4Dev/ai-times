@@ -21,7 +21,7 @@ const BlogList = dynamic(() => import("../containers/BlogListContainer"));
 import HeaderContainer from "@/containers/HeaderContainer";
 import FooterContainer from "@/containers/FooterContainer";
 import SearchInputContainer from "@/containers/SearchInputContainer";
-import slugify from "../lib/prompt-digestion/utils/slugify";
+import slugify from "../lib/slugify";
 
 const brandCardImage = logos.cardLogo?.includes("http")
   ? logos.cardLogo
