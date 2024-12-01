@@ -7,7 +7,7 @@ import general from "@/content/settings/general.json";
 import theme from "@/content/settings/theme.json";
 import logos from "@/content/settings/logos.json";
 import postsData from "@/content/cache/allPostsData.json";
-import slugify from "../lib/prompt-digestion/utils/slugify";
+import slugify from "../lib/slugify";
 const Header = ({
   hasMenu,
   pathname,

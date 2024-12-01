@@ -1,5 +1,5 @@
 [build]
-    command = "node core/sync.js && npm run build --workspace=core"
+    command = "node node_modules/digest-it/lib/sync.js && npm run build --workspace=core"
     functions = "core/src/api"
     publish = "core/out"
 
